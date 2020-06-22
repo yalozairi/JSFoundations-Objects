@@ -11,7 +11,7 @@
  * - returns the name of the channel
  ****************************************************************/
 function getChannelName(channel) {
-  // Your code here
+  return channel.name;
 }
 
 /**************************************************************
@@ -20,7 +20,7 @@ function getChannelName(channel) {
  * - returns the number of videos that channel has
  ****************************************************************/
 function numberOfVideos(channel) {
-  // Your code here
+  return channel.videos.length;
 }
 
 /**************************************************************
@@ -33,7 +33,9 @@ function numberOfVideos(channel) {
  * BONUS: use iteration method `.some()`
  ****************************************************************/
 function channelHasVideo(videoTitle, channel) {
-  // Your code here
+  return channel.videos.some(
+    (video) => video.title.toLowerCase() === videoTitle.toLowerCase()
+  );
 }
 
 /**************************************************************
@@ -45,7 +47,9 @@ function channelHasVideo(videoTitle, channel) {
  * BONUS: use iteration method `.find()`
  ****************************************************************/
 function getChannelByName(channelName, channels) {
-  // Your code here
+  return channels.find(
+    (channel) => channel.name.toLowerCase() === channelName.toLowerCase()
+  );
 }
 
 /**************************************************************
@@ -57,8 +61,27 @@ function getChannelByName(channelName, channels) {
  * BONUS: use iteration methods `.find()` and `.some()`
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
-  // Your code here
+  return channels.find((channel) =>
+    channel.videos.some((video) => video.title === videoTitle)
+  );
 }
+
+//   ((
+//   ); => channels.name.video.toLowerCase() === videoTitle.toLowerCase()
+// );
+// if (
+//   channels.videos.some(
+//     (video) => video.title.toLowerCase() === videoTitle.toLowerCase()
+//   ) === true
+// ) {
+//   return channels.find((channel) => channel.videos === videoTitle);
+// } else {
+//   return undefined;
+// const matchVideo = channels.videos.some(
+//   (titles) => titles.title.toLowerCase() === videoTitle.toLowerCase()
+// );
+// const findVideo = channels.videos.some((matchVideo) => );
+// return channels.videos.find(findVideo);
 
 /**************************************************************
  * searchChannels(query, channels):
